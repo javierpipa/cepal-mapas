@@ -1,0 +1,41 @@
+{% extends "home.html" %}
+{% load leaflet_tags %}
+{% block extrastyle %}
+    {{ block.super }}
+    <style>
+      .leaflet-container { height: 100%; }
+    </style>
+{% endblock %}
+{% block bodyclass %}{{ block.super }} dashboard jet change-form{% endblock %}
+{% block content %}
+
+
+
+<!--style="heigth: auto; overflow-x: auto;"-->
+<div id="content" class="flex">
+  <div class="dashboard-container columns_1 cf">
+
+    <h1>MAPAS CEPAL</h1>
+    <div class="dashboard-item collapsible deletable draggable" data-module-id="5">
+          <div class="dashboard-item-header">
+            <span class="dashboard-item-header-drag icon-grid"></span>
+            <span class="dashboard-item-header-buttons"></span>
+            <span class="dashboard-item-header-title">
+              <a href="#" class="dashboard-item-collapse"><span class="dashboard-item-header-collapse-button icon-arrow-down"></span></a>
+              <a href="#" class="dashboard-item-collapse"><span class="dashboard-item-header-collapse-button icon-arrow-up"></span></a>
+              All Groups 
+            </span>
+            <div class="cf"></div>
+          </div>
+          <div class="dashboard-item-content">
+            <div class="dashboard-container columns_1 cf">
+              <div class="dashboard-column ui-droppable ui-sortable">
+                {% leaflet_map "las" %}
+                  
+              </div>
+          </div>
+        </div>
+    
+  </div>
+</div>
+{% endblock %}
