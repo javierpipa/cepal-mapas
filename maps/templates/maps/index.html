@@ -11,31 +11,64 @@
 
 
 
-<!--style="heigth: auto; overflow-x: auto;"-->
-<div id="content" class="flex">
-  <div class="dashboard-container columns_1 cf">
-
-    <h1>MAPAS CEPAL</h1>
-    <div class="dashboard-item collapsible deletable draggable" data-module-id="5">
-          <div class="dashboard-item-header">
-            <span class="dashboard-item-header-drag icon-grid"></span>
-            <span class="dashboard-item-header-buttons"></span>
-            <span class="dashboard-item-header-title">
-              <a href="#" class="dashboard-item-collapse"><span class="dashboard-item-header-collapse-button icon-arrow-down"></span></a>
-              <a href="#" class="dashboard-item-collapse"><span class="dashboard-item-header-collapse-button icon-arrow-up"></span></a>
-              All Groups 
-            </span>
-            <div class="cf"></div>
-          </div>
-          <div class="dashboard-item-content">
-            <div class="dashboard-container columns_1 cf">
-              <div class="dashboard-column ui-droppable ui-sortable">
-                {% leaflet_map "las" %}
-                  
-              </div>
+<div id="content-main">
+  {% block object-tools %}{% endblock %}
+  <div class="dashboard-container columns_2 cf">
+    <div class="dashboard-column-wrapper">
+      <div class="dashboard-column ">
+      
+        <div class="dashboard-column first">
+          1eros
+          <div class="dashboard-item collapsible deletable draggable" data-module-id="5">
+            <div class="dashboard-item-header">
+              <span class="dashboard-item-header-drag icon-grid"></span>
+              <span class="dashboard-item-header-buttons"></span>
+              <span class="dashboard-item-header-title">
+                <a href="#" class="dashboard-item-collapse"><span class="dashboard-item-header-collapse-button icon-arrow-down"></span></a>
+                <a href="#" class="dashboard-item-collapse"><span class="dashboard-item-header-collapse-button icon-arrow-up"></span></a>
+                All Groups 
+              </span>
+              <div class="cf"></div>
+            </div>
+            <div class="dashboard-item-content">
+              <div class="dashboard-container columns_1 cf">
+                <div class="dashboard-column ui-droppable ui-sortable">
+                  {% leaflet_map "las" %}
+                    
+                </div>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+    </div>
+    <div class="dashboard-column-wrapper">
+      <div class="dashboard-column ">
+        2da
+         <div class="dashboard-item collapsible deletable draggable" data-module-id="6">
+            <div class="dashboard-item-header">
+              <span class="dashboard-item-header-drag icon-grid"></span>
+              <span class="dashboard-item-header-buttons"></span>
+              <span class="dashboard-item-header-title">
+                <a href="#" class="dashboard-item-collapse"><span class="dashboard-item-header-collapse-button icon-arrow-down"></span></a>
+                <a href="#" class="dashboard-item-collapse"><span class="dashboard-item-header-collapse-button icon-arrow-up"></span></a>
+                Groups 2
+              </span>
+              <div class="cf"></div>
+            </div>
+            <div class="dashboard-item-content">
+              <div class="dashboard-container columns_1 cf">
+                <div class="dashboard-column ui-droppable ui-sortable">
+                  {% leaflet_map "last2" %}
+                    
+                </div>
+            </div>
+          </div>
+      </div>
     
   </div>
 </div>
+</div>
+</div>
+
 {% endblock %}

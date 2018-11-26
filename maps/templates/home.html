@@ -1,6 +1,6 @@
 {% extends "maps/base.html" %}
 
-{% load static i18n %}
+{% load static i18n leaflet_tags geojson_tags%}
 {% block title %}{{ title }} | {{ site_title|default:_('ECLAC MAPS') }}{% endblock %}
 
 {% block branding %}
@@ -8,6 +8,7 @@
         <span class="icon-jet"></span> {% trans "ECLAC MAPS" %}
     </h1>
 {% endblock %} 
+
 {% block extrastyle %}
     {{ block.super }}
     <script type="text/javascript">
@@ -32,6 +33,7 @@
     <script type="text/javascript" src="{% static 'dist/leaflet.ajax.js' %}"></script>
 
 {% endblock %}
+
 {% block content %}
     <div class="panel-body">
 

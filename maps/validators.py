@@ -17,4 +17,4 @@ def validate_hex_color(hex_str):
     """
     match_str = r'#[0-9a-fA-F]{6}'
     if re.match(match_str, hex_str) is None:
-raise ValidationError(u'{} is not a valid RGB hex string.'.format(hex_str))
+        raise ValidationError(u'{} is not a valid RGB hex string.'.format(hex_str))
