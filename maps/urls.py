@@ -15,11 +15,12 @@ app_name = 'maps'
 urlpatterns = [
     url(r'^$', index, name='index'),
     # url(r'^$', TemplateView.as_view(template_name='index.html'), name='home'),
-    # url(r'^data.geojson$', GeoJSONLayerView.as_view(model=MushroomSpot, properties=('title', 'description', 'picture_url')), name='data')
+    url(r'^data.geojson$', GeoJSONLayerView.as_view(model=MushroomSpot, properties=('title', 'description', 'picture_url')), name='data'),
+    # url(r'^data2.geojson$', GeoJSONLayerView.as_view(model=WorldBorder, properties=('title', 'description', 'picture_url')), name='data2'),
     # url(r'^data.geojson$', GeoJSONLayerView.as_view(model=WorldBorder, properties=('name' )), name='data'),
-    url(r'^data.geojson$', \
-    	MapLayer.as_view(model=WorldBorder, properties=('name', 'pop2005' )), name='data'\
-    	)
+    url(r'^data2.geojson$', MapLayer.as_view(model=WorldBorder, properties=('name', 'pop2005', 'area' )), name='data2'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
+ 

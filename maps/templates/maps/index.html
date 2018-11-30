@@ -9,10 +9,16 @@
 {% block bodyclass %}{{ block.super }} dashboard jet change-form{% endblock %}
 {% block content %}
 
-
+ 
 
 <div id="content-main">
   {% block object-tools %}{% endblock %}
+  <div class="dashboard-container columns_1 cf">
+    <div class="dashboard-column-wrapper">
+      <div class="dashboard-column ">
+      </div>
+    </div>
+  </div>
   <div class="dashboard-container columns_2 cf">
     <div class="dashboard-column-wrapper">
       <div class="dashboard-column ">
@@ -33,7 +39,7 @@
             <div class="dashboard-item-content">
               <div class="dashboard-container columns_1 cf">
                 <div class="dashboard-column ui-droppable ui-sortable">
-                  {% leaflet_map "las" %}
+                  {% leaflet_map "map1" %}
                     
                 </div>
             </div>
@@ -59,7 +65,8 @@
             <div class="dashboard-item-content">
               <div class="dashboard-container columns_1 cf">
                 <div class="dashboard-column ui-droppable ui-sortable">
-                  {% leaflet_map "last2" %}
+                  
+                  {% leaflet_map "map2" callback="window.map_init_basic" %}
                     
                 </div>
             </div>

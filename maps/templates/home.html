@@ -9,9 +9,27 @@
     </h1>
 {% endblock %} 
 
-{% block extrastyle %}
+{% block extrastyle %} 
     {{ block.super }}
     <script type="text/javascript">
+      function map_init_basic (map, options) {
+        var dataurl = '{% url "maps:data2" %}';
+          fetch(dataurl)
+          .then(function(resp) {
+            return resp.json();
+          })
+          .then(function(data) {
+            L.geoJson(data, {
+              onEachFeature: function onEachFeature(feature, layer) {
+                var props = feature.properties;
+                var content = `<h3>${props.name}</h3><p>Population: ${props.pop2005}</p><p>Area: ${props.area}</p>`;
+                layer.bindPopup(content);
+            }}).addTo(map);
+          });
+        
+        L.marker([50.5, 30.5]).addTo(map);
+        
+      }
       var dataurl = '{% url "maps:data" %}';
       window.addEventListener("map:init", function (event) {
         var map = event.detail.map;
